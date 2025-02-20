@@ -1,8 +1,12 @@
 import { posts } from '@/app/lib/placeholder-data';
 import Post from '@/app/ui/components/posts/post';
+import {use} from "react"
 
-export default function Posts({params}: {params: {id: string}}) {
-    const post = posts.find((post) => post.id === params.id);
+
+export default function Posts({params}: {params: Promise<{id: string}>}) {
+    const { id } = use(params);
+    const post = posts.find((post) => post.id === id);
+
     if (!post) {
         return <h1>Post not found</h1>;
     }
