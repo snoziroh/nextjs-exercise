@@ -1,5 +1,5 @@
 import styles from '@/app/ui/styles/home.module.css';
-// import Image from 'next/image';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
             <a href="/blog/posts" className={`outline outline-1 outline-offset-2 border-purple-700 text-purple-700 hover:text-white py-2 px-4 rounded hover:bg-purple-800 md:w-auto ${styles.fit_content}`}>
               Go to Blog
             </a>
-            {/* <div className='relative flex justify-center items-center'>
-              <Image src="/image-desktop.jpeg" alt="Hero" width={1000} height={760} className='hidden md:block rounded-lg' />
-              <Image src="/image-mobile.jpeg" alt="Hero" width={560} height={620} className='block md:hidden rounded-lg' />
-            </div> */}
+          </div>
+          <div className='relative flex justify-center items-center'>
+            <Image src="/image-desktop.jpeg" alt="Hero" width={1000} height={760} className='hidden md:block rounded-lg z-10' />
+            <Image src="/image-mobile.jpeg" alt="Hero" width={560} height={620} className='block md:hidden rounded-lg z-10' />
           </div>
         </div>
 
