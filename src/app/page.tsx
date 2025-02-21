@@ -12,7 +12,7 @@ export default function Home() {
               Massa urna magnis dignissim id euismod porttitor vitae etiam viverra nunc at adipiscing sit morbi aliquet mauris porttitor nisi, senectus pharetra, ac porttitor orci.
             </p>
             <a href="/blog/posts" className={`outline outline-1 outline-offset-2 border-purple-700 text-purple-700 hover:text-white py-2 px-4 rounded hover:bg-purple-800 md:w-auto ${styles.fit_content}`}>
-              Go to Blog
+              Read
             </a>
           </div>
           <div className='relative flex justify-center items-center'>

@@ -1,19 +1,19 @@
-import { posts } from '@/app/lib/placeholder-data';
 import Post from '@/app/ui/components/posts/post';
-import {use} from "react"
+import { notFound } from 'next/navigation';
+import { getPostById } from '@/app/lib/data';
 
-
-export default function Posts({params}: {params: Promise<{id: string}>}) {
-    const { id } = use(params);
-    const post = posts.find((post) => post.id === id);
+export default async function Posts({ params }: { params: { id: string } }) {
+    const { id } = await params;
+    const post = await getPostById(id);
 
     if (!post) {
-        return <h1>Post not found</h1>;
+        notFound();
     }
+
     return (
         <div>
             <h1 className='text-4xl font-bold mb-4 text-purple-800'>Post</h1>
-            <Post {...post}/>
+            <Post {...post} />
         </div>
     );
 }
