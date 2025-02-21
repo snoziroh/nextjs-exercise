@@ -2,7 +2,11 @@ import Post from '@/app/ui/components/posts/post';
 import { notFound } from 'next/navigation';
 import { getPostById } from '@/app/lib/data';
 
-export default async function Posts({ params }: { params: { id: string } }) {
+interface Params {
+    id: string;
+}
+
+export default async function Posts({ params }: { params: Promise<Params> }) {
     const { id } = await params;
     const post = await getPostById(id);
 

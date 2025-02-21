@@ -30,7 +30,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
         }
         const post = await pool.query('INSERT INTO posts (id, author, title, content, date) VALUES ($1, $2, $3, $4, $5)', [id, author, title, content, date]);
-        return NextResponse.json({ message: 'Post created successfully' }, { status: 201 });
+        return NextResponse.json({ message: 'Post created successfully', post }, { status: 201 });
     } catch (error) {
         return NextResponse.json({ error }, { status: 500 });
     }
